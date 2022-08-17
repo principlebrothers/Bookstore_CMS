@@ -5,6 +5,7 @@ function Books() {
   return (
     <div className="mainBookContainer">
       <InputBooks />
+      <button type="button">Delete</button>
     </div>
   );
 }
