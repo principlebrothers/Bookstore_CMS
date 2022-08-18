@@ -10,7 +10,7 @@ function Nav() {
         </h1>
       </div>
       <nav className="navLinks">
-        <Link to="/">Books</Link>
+        <Link to="/">BookList</Link>
         <Link to="/categories">Categories</Link>
       </nav>
     </div>
