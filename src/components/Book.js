@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/Book/Book';
 
 const Book = ({
-  id, title, author, chapter, genre, progress,
+  id, title, author, chapter, progress,
 }) => {
   const dispatch = useDispatch();
 
@@ -46,7 +46,6 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
   chapter: PropTypes.number.isRequired,
   progress: PropTypes.number.isRequired,
 };
