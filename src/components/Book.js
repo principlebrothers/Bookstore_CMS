@@ -15,7 +15,6 @@ const Book = ({
   return (
     <li className="book">
       <div>
-        <p className="genre">{genre}</p>
         <h2 className="title">{title}</h2>
         <p className="author">{author}</p>
         <div className="effectChange">
