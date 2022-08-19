@@ -14,9 +14,8 @@ function InputBooks() {
       id: uuidv4(),
       title,
       author,
-      progress: 30,
-      genre: 'Psychology',
-      chapter: 2,
+      progress: Math.floor(Math.random() * 100),
+      chapter: `Chapter ${Math.floor(Math.random() * 10)}`,
     };
 
     if (title.length && author.length) {

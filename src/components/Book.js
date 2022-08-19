@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/Book/Book';
 
 const Book = ({
-  id, title, author, chapter, genre, progress,
+  id, title, author, chapter, progress,
 }) => {
   const dispatch = useDispatch();
 
@@ -15,7 +15,6 @@ const Book = ({
   return (
     <li className="book">
       <div>
-        <p className="genre">{genre}</p>
         <h2 className="title">{title}</h2>
         <p className="author">{author}</p>
         <div className="effectChange">
@@ -47,7 +46,6 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
   chapter: PropTypes.number.isRequired,
   progress: PropTypes.number.isRequired,
 };
