@@ -4,7 +4,7 @@ import InputBooks from './InputBooks';
 import Book from './Book';
 
 function BookList() {
-  const books = useSelector((state) => state.books);
+  const books = useSelector((state) => state.books.books);
   return (
     <div className="ListContainer">
       <ul>
@@ -17,7 +17,6 @@ function BookList() {
             title={book.title}
             chapter={book.chapter}
             progress={book.progress}
-            genre={book.genre}
           />
         ))}
       </ul>
