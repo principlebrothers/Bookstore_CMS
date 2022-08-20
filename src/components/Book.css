@@ -1,0 +1,126 @@
+.book {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+  align-items: center;
+  background-color: rgb(247, 244, 244);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  margin: 0 6.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.author {
+  width: 6.688rem;
+  height: 1.188rem;
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.comment,
+.edit,
+.remove {
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  border: none;
+  color: #4386bf;
+}
+
+.comment {
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  border-right: 1px solid #e8e8e8;
+}
+
+.remove {
+  width: 3.375rem;
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  border-right: 1px solid #e8e8e8;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.completed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-right: solid 1px #e8e8e8;
+}
+
+.comment:hover,
+.edit:hover,
+.remove:hover {
+  color: #0290ff;
+  font-weight: 900;
+  transition: 0.4s;
+  background-color: antiquewhite;
+}
+
+.perCentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.perCentContainer h2 {
+  margin: 0.188rem 5rem 0 0;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.chapterHeader {
+  width: 7.875rem;
+  height: 1.125rem;
+  margin: 0.063rem 3.625rem 0 3.688rem;
+  opacity: 0.5;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.chapter {
+  width: 4.688rem;
+  height: 1.313rem;
+  margin: 0.438rem 6.813rem 0.25rem 3.688rem;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #121212;
+}
+
+.update {
+  margin: 0.75rem 0 0.563rem 3.688rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  border: 0 solid;
+  background-color: #0290ff;
+  color: #fff;
+}
