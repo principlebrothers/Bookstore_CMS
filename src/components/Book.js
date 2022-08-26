@@ -2,17 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { CircularProgressbar } from 'react-circular-progressbar';
+import swal from 'sweetalert';
 import { removeBook } from '../redux/Book/Book';
 import 'react-circular-progressbar/dist/styles.css';
 import './Book.css';
 
 const Book = ({
-  id, title, author, chapter, progress,
+  id, title, author,
 }) => {
   const dispatch = useDispatch();
+  const chapter = Math.floor(Math.random() * 10);
+  const progress = Math.floor(Math.random() * 100);
 
   const handleRemove = () => {
     dispatch(removeBook(id));
+    swal('Done!', `${title} successfully removed`, 'success');
   };
 
   return (
@@ -57,8 +61,6 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  chapter: PropTypes.number.isRequired,
-  progress: PropTypes.number.isRequired,
 };
 
 export default Book;
