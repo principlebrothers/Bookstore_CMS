@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
+import swal from 'sweetalert';
 import { addBook } from '../redux/Book/Book';
 import './InputBooks.css';
 
@@ -15,12 +16,11 @@ function InputBooks() {
       id: uuidv4(),
       title,
       author,
-      progress: Math.floor(Math.random() * 100),
-      chapter: `Chapter ${Math.floor(Math.random() * 10)}`,
     };
 
     if (title.length && author.length) {
       dispatch(addBook(book));
+      swal('Done!', `${title} successfully added`, 'success');
       setTitle('');
       setAuthor('');
     }
@@ -29,7 +29,7 @@ function InputBooks() {
   return (
     <div>
       <h3 className="addBookHeader">ADD NEW BOOK</h3>
-      <form className="form-container">
+      <form onSubmit={handleSubmit} className="form-container">
         <input
           className="title"
           type="text"
@@ -48,7 +48,7 @@ function InputBooks() {
           onChange={(e) => setAuthor(e.target.value)}
           required
         />
-        <button type="button" onClick={handleSubmit} className="addBook">ADD BOOK</button>
+        <button type="submit" onSubmit={handleSubmit} className="addBook">ADD BOOK</button>
       </form>
     </div>
   );
