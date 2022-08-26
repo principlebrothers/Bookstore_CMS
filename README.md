@@ -21,7 +21,9 @@
 
 ## Live Demo
 
-[Live Demo Link] ()
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ff6c75c5-20a3-4808-ab08-5d5095c2d123/deploy-status)](https://app.netlify.com/sites/enebookstore/deploys)
+[**Live Demo Link**](https://enebookstore.netlify.app/)
+![bookstore](https://user-images.githubusercontent.com/92553079/186976635-330617ac-da72-49f4-ba7f-fe39d9516128.PNG)
 
 
 # Getting Started with Create React App
