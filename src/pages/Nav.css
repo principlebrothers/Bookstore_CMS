@@ -1,0 +1,35 @@
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(247, 244, 244);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  padding: 1.813rem 6.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  color: #0290ff;
+  cursor: pointer;
+}
+
+.subContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLinks > * {
+  padding: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: rgb(36, 36, 36);
+}
+
+.navLinks > *:hover {
+  color: #0290ff;
+  border: 2px solid #0290ff;
+  transition: 0.4s;
+  background-color: antiquewhite;
+}
