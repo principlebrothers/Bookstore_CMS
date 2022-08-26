@@ -1,3 +1,11 @@
+.catContainer {
+display: flex;
+flex-direction: column;
+gap: 2rem;
+align-items: center;
+justify-content: center;
+}
+
 .checkStatusBtn {
   width: 11.5rem;
   height: 2.813rem;
@@ -14,4 +22,11 @@
   background-color: antiquewhite;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   color: #000;
+}
+
+.catInfo {
+  color: red;
+  padding: 2rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
 }
