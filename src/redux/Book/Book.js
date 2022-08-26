@@ -4,50 +4,61 @@ import axios from 'axios';
 // Actions
 const ADD_BOOK = 'bookstore/Books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/Books/REMOVE_BOOK';
+const FETCH_BOOKS = 'bookstore/Books/FETCH_BOOKS';
 const BOOKS_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/4ok0TSC49cD6dE8j7cYc/books';
 
-export const fetchBooks = createAsyncThunk('bookstore/Books/fetchBooks', async () => {
-  try {
-    const { data } = await axios.get(BOOKS_URL);
-    return [...data];
-  } catch (err) {
-    return err.message;
-  }
-});
-
-const initialState = {
-  books: [],
-  status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
-  error: null,
-};
+const books = [];
 
 // Reducer
-const bookReducer = (state = initialState, action) => {
+const bookReducer = (state = books, action) => {
   switch (action.type) {
-    case ADD_BOOK:
-      return {
-        ...state,
-        books: [...state.books, action.payload],
-      };
-    case REMOVE_BOOK:
-      return {
-        ...state,
-        books: state.books.filter((book) => book.id !== action.payload),
-      };
+    case `${FETCH_BOOKS}/fulfilled`:
+      return action.payload.books;
+    case `${ADD_BOOK}/fulfilled`:
+      return [...state, action.payload.book];
+    case `${REMOVE_BOOK}/fulfilled`:
+      return state.filter((book) => book[0] !== action.payload.id);
     default:
       return state;
   }
 };
 
-// Action Creator
-export const addBook = (book) => ({
-  type: ADD_BOOK,
-  payload: book,
+// Fetch book
+export const fetchBooks = createAsyncThunk(FETCH_BOOKS, async () => {
+  try {
+    const { data } = await axios.get(BOOKS_URL);
+    return { books: Object.entries(data) };
+  } catch (err) {
+    return err.message;
+  }
 });
 
-export const removeBook = (id) => ({
-  type: REMOVE_BOOK,
-  payload: id,
+// Add book
+export const addBook = createAsyncThunk(ADD_BOOK, async (book) => {
+  await axios.post(BOOKS_URL, {
+    item_id: book.id,
+    title: book.title,
+    author: book.author,
+    category: 'null',
+  });
+  return {
+    book: [
+      book.id,
+      [
+        {
+          author: book.author,
+          title: book.title,
+          category: 'null',
+        },
+      ],
+    ],
+  };
+});
+
+// Remove book
+export const removeBook = createAsyncThunk(REMOVE_BOOK, async (id) => {
+  await axios.delete(`${BOOKS_URL}/${id}`);
+  return { id };
 });
 
 export default bookReducer;
