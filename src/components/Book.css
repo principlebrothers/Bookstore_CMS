@@ -67,9 +67,10 @@
 .edit:hover,
 .remove:hover {
   color: #0290ff;
-  font-weight: 900;
+  font-weight: 600;
   transition: 0.4s;
   background-color: antiquewhite;
+  border-bottom: 2px solid #0290ff;
 }
 
 .perCentContainer {
@@ -123,4 +124,14 @@
   border: 0 solid;
   background-color: #0290ff;
   color: #fff;
+}
+
+.update:hover {
+  background-color: antiquewhite;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  color: #000;
+}
+
+.update:active {
+  border-bottom: 2px solid rgb(250, 166, 56);
 }
